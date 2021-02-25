@@ -102,6 +102,7 @@ class Gryffin(Logger):
 			# prepare sample generation / selection
 			best_params         = obs_params[np.argmin(obs_objs)]
 			kernel_contribution = self.bayesian_network.kernel_contribution
+			print ('Current best:', best_params)
 
 			# if there are process constraining parameters, run those first
 			if self.config.process_constrained:
