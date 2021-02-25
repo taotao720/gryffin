@@ -79,7 +79,7 @@ class Chimera(object):
 # 			tolerance = minimum + self.tolerances[obj_index] * (maximum - minimum)
 			
 			# top tolerance% of obj
-			sorted_obj = np.sort(np.unique(obj[domain]))
+			sorted_obj = np.unique(obj[domain])
 			if np.isnan(self.tolerances[obj_index]):
 				tolerance = res_abs[obj_index]	
 			else:
