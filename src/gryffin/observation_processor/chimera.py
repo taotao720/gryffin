@@ -93,6 +93,9 @@ class Chimera(object):
 			interest = np.where(obj[domain] < tolerance)[0]
 			if len(interest) > 0:
 				domain = domain[interest]
+				print (len(np.where(sorted_obj < tolerance)[0]), "samples met obj", obj_index)
+			else:
+				print ("No sample met obj", obj_index)
 	
 			# apply shift	
 			tols.append(tolerance + shift)
@@ -104,6 +107,7 @@ class Chimera(object):
 			else:
 				shift -= np.amax(transposed_objs[0][domain]) - tolerance
 				shifted_objs[obj_index + 1] = transposed_objs[0] + shift
+
 		return shifted_objs, tols
 
 
