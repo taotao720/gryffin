@@ -90,10 +90,10 @@ class Chimera(object):
 					
 
 			# adjust region of interest
-			interest = np.where(obj[domain] < tolerance)[0]
+			interest = np.where(obj[domain] <= tolerance)[0]
 			if len(interest) > 0:
 				domain = domain[interest]
-				print (len(np.where(sorted_obj < tolerance)[0]), "samples met obj", obj_index)
+				print (len(np.where(sorted_obj <= tolerance)[0]), "samples met obj", obj_index)
 			else:
 				print ("No sample met obj", obj_index)
 	
